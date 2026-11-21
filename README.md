@@ -9,7 +9,7 @@ Universidade Federal de Santa Catarina (UFSC) | Prof. Rafael Novo da Rosa
 | Nome | GitHub |
 |---|---|
 | Karoline de Quadros Correia | [@karolinecorreia-art](https://github.com/karolinecorreia-art) |
-| Letícia SOBRENOME | [@leticiacolognese-max](https://github.com/leticiacolognese-max) |
+| Letícia Olivo Colognese | [@leticiacolognese-max](https://github.com/leticiacolognese-max) |
 
 ## Sobre o projeto
 
