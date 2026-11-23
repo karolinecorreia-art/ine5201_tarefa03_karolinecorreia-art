@@ -21,7 +21,7 @@ Implementação do clássico *Jogo da Forca* em Python, com interface gráfica, 
 
 | Requisito | Situação | Onde está |
 |---|---|---|
-| Display da palavra com letras ocultas (_ _ _) | Atendido | atualizar_display() |
+| Display da palavra com letras ocultas (_ _ _ _) | Atendido | atualizar_display() |
 | Teclado virtual com letras A-Z | Atendido | montar_layout() (26 botões em 3 linhas) |
 | Boneco com 6 partes | Atendido | desenhar_boneco() (cabeça, tronco, 2 braços, 2 pernas) |
 | Contador de tentativas restantes | Atendido | texto "Tentativas restantes" em atualizar_tela() |
