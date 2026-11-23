@@ -9,7 +9,7 @@ Universidade Federal de Santa Catarina (UFSC) | Prof. Rafael Novo da Rosa
 | Nome | GitHub |
 |---|---|
 | Karoline de Quadros Correia | [@karolinecorreia-art](https://github.com/karolinecorreia-art) |
-| Letícia SOBRENOME | [@leticiacolognese-max](https://github.com/leticiacolognese-max) |
+| Letícia Olivo Colognese | [@leticiacolognese-max](https://github.com/leticiacolognese-max) |
 
 ## Sobre o projeto
 
@@ -82,51 +82,51 @@ O jogo mostra no rodapé: partidas jogadas, vitórias, derrotas e aproveitamento
 
 Clone o repositório e entre na pasta:
 
-
-git clone https://github.com/karolinecorreia-art/tarefa03-karolinecorreia-art.git
-cd tarefa03-karolinecorreia-art
-
+```
+git clone https://github.com/karolinecorreia-art/ine5201-tarefa03-karolinecorreia-art.git
+cd ine5201-tarefa03-karolinecorreia-art
+```
 
 ### Windows (PowerShell)
 
-
+```
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install FreeSimpleGUI
 .\.venv\Scripts\python.exe jogo_forca.py
-
+```
 
 ### Linux ou macOS
 
-
+```
 python3 -m venv .venv
 source .venv/bin/activate
 pip install FreeSimpleGUI
 python jogo_forca.py
-
+```
 
 ## Testes automatizados
 
-O projeto inclui 10 testes (test_forca.py) para as funções de lógica e de arquivos: remoção de acentos, display da palavra, verificação de vitória, letras ocultas e erradas, escolha de palavra sem repetição, estatísticas, carregamento de palavras e gravação e leitura do arquivo de estatísticas.
+O projeto inclui testes automatizados (`teste_forca.py`) para as funções de lógica e de arquivos: remoção de acentos, display da palavra, verificação de vitória, letras ocultas e erradas, escolha de palavra sem repetição, estatísticas, carregamento de palavras e gravação e leitura do arquivo de estatísticas.
 
 Para rodar (Windows):
 
+```
+.\.venv\Scripts\python.exe -m unittest teste_forca -v
+```
 
-.\.venv\Scripts\python.exe -m unittest test_forca -v
-
-
-Resultado esperado: Ran 10 tests e OK.
+Resultado esperado: todos os testes terminam com `OK`.
 
 ## Estrutura do projeto
 
-
-tarefa03-karolinecorreia-art/
-├── jogo_forca.py        # Código do jogo e da interface gráfica
-├── test_forca.py        # Testes automatizados
+```
+ine5201-tarefa03-karolinecorreia-art/
+├── jogo_forca.py         # Código do jogo e da interface gráfica
+├── teste_forca.py       # Testes automatizados
 ├── palavras.txt         # Banco de palavras (58 palavras, uma por linha)
 ├── estatisticas.json    # Vitórias e derrotas (gerado ao jogar)
 ├── screenshots/         # Capturas de tela do jogo
 └── README.md            # Este arquivo
-
+```
 
 ### Funções de jogo_forca.py
 
@@ -190,5 +190,3 @@ O repositório foi desenvolvido pela dupla com colaboradoras no GitHub, usando g
 ## Licença e uso
 
 Projeto acadêmico, desenvolvido para a disciplina INE5201 (UFSC).
-
-
