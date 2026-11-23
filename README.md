@@ -158,8 +158,28 @@ Para adicionar palavras, escreva uma por linha. Acentos são removidos automatic
 
 ## Uso do GitHub Copilot
 
-O GitHub Copilot (extensão e Copilot Chat no VS Code) foi usado como ferramenta de apoio na revisão do código. Ele sugeriu melhorias, como validação das estatísticas, tratamento de erros ao salvar, testes automatizados, dicas mais previsíveis e recursos visuais. As sugestões foram avaliadas pela dupla e aplicadas de forma seletiva. Itens que aumentariam o risco de erros perto do prazo, como separar o estado em uma dataclass, ficaram de fora.
+O GitHub Copilot (extensão e Copilot Chat no VS Code) foi usado como apoio na **revisão do código** do jogo. O Copilot Chat analisou o projeto e devolveu 9 grupos de sugestões de melhoria (print em `screenshots/sugestoes-copilot.png`). A dupla avaliou cada uma e aplicou só as que melhoravam o jogo sem aumentar o risco de erros perto do prazo.
 
+### Sugestões do Copilot e decisões tomadas
+
+| # | Sugestão do Copilot | Decisão | O que foi feito |
+|---|---|---|---|
+| 1 | Corrigir a resolução dos arquivos | Aplicada | `palavras.txt` e `estatisticas.json` são localizados a partir da pasta do próprio script (`BASE_DIR`), então o jogo funciona de qualquer pasta. |
+| 2 | Persistência das estatísticas mais segura | Aplicada | O JSON e os tipos dos valores são validados, erros ao salvar mostram um aviso em vez de fechar o jogo, e a gravação usa arquivo temporário seguido de troca (`os.replace`). |
+| 3 | Melhorar o carregamento das palavras | Aplicada | Linhas vazias, espaços extras, duplicatas e palavras com caracteres fora de A-Z são descartados, e a palavra sorteada não repete a da partida anterior. |
+| 4 | Dica mais previsível | Aplicada em parte | As letras ocultas são ordenadas e o botão mostra `Dicas (1)` ou `Dicas (0)`, sendo desabilitado depois de usado. A letra revelada continua sorteada entre as ocultas. |
+| 5 | Testes automatizados | Aplicada em parte | `teste_forca.py` tem 10 testes (acentos, display, vitória, letras ocultas e erradas, escolha sem repetição, estatísticas e carregamento de palavras). Funções que dependem da janela não foram testadas. |
+| 6 | Separar estado e interface com uma `dataclass` | Não aplicada | O estado continua em um dicionário. A mudança é grande, arriscada perto do prazo e não é exigida pelo enunciado. |
+| 7 | Recursos visuais | Aplicada | Botões verdes (acerto), vermelhos (erro) e azuis (dica), teclado físico, lista de letras erradas e destaque da letra da dica. |
+| 8 | Melhorar a documentação | Aplicada | README com requisitos, instalação, execução, testes e estrutura, informando que o pacote gráfico é o FreeSimpleGUI. |
+| 9 | Outras melhorias funcionais | Aplicada em parte | Confirmação antes de **Desistir** e **Novo Jogo** durante uma partida, e estatísticas com total de partidas e aproveitamento. **Não aplicadas:** seletor de dificuldade, categorias de palavras e botão para zerar estatísticas, que fogem do escopo do enunciado. |
+
+### Aprendizados com o uso do Copilot
+
+- As sugestões são um ponto de partida e **precisam ser avaliadas**: algumas aumentariam a complexidade sem exigência da tarefa.
+- A revisão ajudou a deixar o jogo mais robusto (caminhos de arquivo, estatísticas e carregamento de palavras).
+- As mudanças aplicadas foram conferidas jogando e com os testes automatizados.
+  
 ## Screenshots
 
 ### Tela inicial do jogo
@@ -182,6 +202,9 @@ O GitHub Copilot (extensão e Copilot Chat no VS Code) foi usado como ferramenta
 
 ### Testes automatizados
 ![Testes](screenshots/jogo_teste.png)
+
+### Sugestões Copilot
+![Testes](screenshots/sugestoes_copilot.png)
 
 ## Organização do trabalho em dupla
 
